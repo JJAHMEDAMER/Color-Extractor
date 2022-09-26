@@ -19,12 +19,13 @@ for file in os.listdir(folder):
         
         threshold = threshold/len(colorList)
         
-        
+        index = 1
         print ('import \'package:flutter/material.dart\'; \nclass AppColor{')
         for color in colorList:
             if color[0] >= threshold:                
-                final_color = (color[1][3], color[1][0],color[1][1],color[1][2])
-                print('  static final Color COLOR_NAME = const Color.fromARGB' + str(final_color) +';') 
+                final_color = str((color[1][3], color[1][0],color[1][1],color[1][2]))
+                print(f'  static final Color color_{index} = const Color.fromARGB({final_color};') 
+                index += 1
         print('}')
 
 
