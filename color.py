@@ -22,7 +22,7 @@ for file in os.listdir(folder):
         
         print ('import \'package:flutter/material.dart\'; \nclass AppColor{')
         for color in colorList:
-            if color[0] > threshold:                
+            if color[0] >= threshold:                
                 final_color = (color[1][3], color[1][0],color[1][1],color[1][2])
                 print('  static final Color COLOR_NAME = const Color.fromARGB' + str(final_color) +';') 
         print('}')
