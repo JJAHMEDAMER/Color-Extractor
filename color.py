@@ -5,13 +5,13 @@ import os
 
 #folder = input('Enter Folder Path : ')
 
-folder = r"D:\004-Programing\flutter\happy_mart\lib\utils\color_palette"
+folder = r"D:\004-Programing\flutter\happy_mart\lib\utils\color_palette\ "
 
 # Input Checker
-while folder[0] in '({["\']})':
+while folder[0] in '({["\']}) \/':
     folder = folder[1:]
 
-while folder[-1] in'({["\']})':
+while folder[-1] in'({["\']}) \/':
     folder = folder[:-1]
     
 
