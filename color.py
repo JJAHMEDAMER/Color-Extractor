@@ -3,23 +3,34 @@ import os
 
 
 
-folder = input('Enter Folder Path : ')
+#folder = input('Enter Folder Path : ')
 
+folder = r"D:\004-Programing\flutter\happy_mart\lib\utils\color_palette"
 
-print(folder[0])
+# Input Checker
 while folder[0] in '({["\']})':
     folder = folder[1:]
 
 while folder[-1] in'({["\']})':
     folder = folder[:-1]
     
-print(folder)
 
-for file in os.listdir(folder):
+# Color Extractor
+
+try:
+    file_list = os.listdir(folder)
+    for i in range(len(file_list)):
+        file_list[i] = f'{folder}\{file_list[i]}'
+except:
+    file_list = [folder]
+
+
+ 
+for file in file_list:
     if file.endswith('.jpeg') or file.endswith('.png'):
         print(file)
         
-        img = Image.open(folder + '\\' + file)
+        img = Image.open(file)
         colorList = img.getcolors()
             
         threshold = 0
