@@ -1,9 +1,18 @@
 from PIL import Image
 import os
 
-folder = "D:\\004-Programing\\flutter\\happy_mart\\lib\\utils\\1080w"
 
 
+folder = input('Enter Folder Path : ')
+
+
+print(folder[0])
+while folder[0] in '({["\']})':
+    folder = folder[1:]
+
+while folder[-1] in'({["\']})':
+    folder = folder[:-1]
+    
 print(folder)
 
 for file in os.listdir(folder):
@@ -27,6 +36,7 @@ for file in os.listdir(folder):
                 print(f'  static final Color color_{index} = const Color.fromARGB({final_color};') 
                 index += 1
         print('}')
+# 'D:\004-Programing\flutter\happy_mart\lib\utils\color_palette'
 
 
 '''
