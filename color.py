@@ -3,9 +3,9 @@ import os
 
 
 
-#folder = input('Enter Folder Path : ')
+folder = input('Enter Folder Path : ')
 
-folder = r"D:\004-Programing\flutter\happy_mart\lib\utils\color_palette\ "
+# folder = r"D:\004-Programing\flutter\happy_mart\lib\utils\color_palette\ "
 
 # Input Checker
 while folder[0] in '({["\']}) \/':
@@ -31,7 +31,9 @@ for file in file_list:
         print(file)
         
         img = Image.open(file)
-        colorList = img.getcolors()
+        width , height = img.size
+        colorList = img.getcolors(width * height)
+        print(colorList)
             
         threshold = 0
         for color in colorList:
